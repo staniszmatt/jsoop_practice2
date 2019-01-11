@@ -100,21 +100,20 @@ class Input{
 		Don't store the CSS selector, you made the element, store the direct dom object itself!
 		*/
 	showError( inputMessage ){
-		var inputPosition = $("input").position();
+		var inputPosition = this.someTargetInputElm.position();
 		var inputTop = inputPosition.top;
-		var inputHeight = $("input").height();
+		var inputHeight = this.someTargetInputElm.height();
 
-		var divHeight = (inputTop + inputHeight).toString();
+		var divHeight = (inputTop + inputHeight+1).toString();
 		var divLeft = (inputPosition.left).toString();
-
+debugger;
 		this.showErrorDiv = $("<div>")
 			.addClass("inputError")
-			.css("left", "92.64286041259766")
-			.css("top", divHeight)
-			.css("left", divLeft)
+			.css("top", divHeight+'px')
+			.css("left", divLeft+'px')
 			.text(inputMessage);
 
-		$("input").parent().append(this.showErrorDiv);
+		this.someTargetInputElm.parent().append(this.showErrorDiv);
 	}
 	/*
 	hideError removes the error dom element from the DOM for the given input
