@@ -14,7 +14,18 @@ class ColorSquare{
 		you'll need to bind the handleClick method to this object:
 			this.handleClick = this.handleClick.bind(this)
 	*/
-	constructor( ){
+	constructor(availableColors, colorIndex, classDom){
+		
+		this.availableColors = availableColors;
+		this.colorIndex =colorIndex;
+		this.classDom = classDom;
+
+		this.colors = null;
+		this.domElmClass = null;
+		this.domElmOwner = null;
+		this.neighborToRight = null;
+		this.propOfNeighborSuccess = null;
+		this.handleClick = this.handleClick.bind(this)// Fix when ready, change out handleClick if needed, MS. 
 	}
 	/*setter function for the property neighbor
 	new, somewhat limited support: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set
@@ -26,8 +37,8 @@ class ColorSquare{
 		make sure it only sets the neighbor if it is the right class constructor (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor)
 		if it is the right constructor, set the neightbor
 	*/
-	set neighbor(){
-
+	set neighbor(propOfNeighbor, colorSquare){
+		var o = new Object;
 	}
 	/* getter function for the property neighbor
 	new, somewhat limited support: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get
