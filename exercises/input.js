@@ -106,7 +106,7 @@ class Input{
 
 		var divHeight = (inputTop + inputHeight+1).toString();
 		var divLeft = (inputPosition.left).toString();
-debugger;
+
 		this.showErrorDiv = $("<div>")
 			.addClass("inputError")
 			.css("top", divHeight+'px')
@@ -123,6 +123,6 @@ debugger;
 		removes the dom element in question (https://www.w3schools.com/jquery/html_remove.asp)
 		*/
 	hideError(){
-		
+		this.showErrorDiv.remove();
 	}
 }
